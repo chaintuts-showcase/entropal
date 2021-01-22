@@ -90,13 +90,15 @@ class DiceEntropy:
         self.entropy = self.entropy << self.bits
 
         # Add the new state on via bitwise-or
-        self.entropy = self.entropy | roll
+        # Must take roll - 1 to avoid off-by-one error in bit calculation
+        # Otherwise, we don't get the full range of indexes properly
+        self.entropy = self.entropy | (roll - 1)
 
         # Increment the number of stored bits of entropy
         self.bits_entropy = self.bits_entropy + self.bits
 
         # Show the raw last added bits in the state
-        self._bits_last = roll
+        self._bits_last = (roll - 1)
 
     # Represent the entropy in a nice binary format
     def _get_binary_entropy(self):
