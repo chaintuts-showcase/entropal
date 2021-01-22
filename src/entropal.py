@@ -57,7 +57,7 @@ def select_wordlist_pc():
 
         return word
     except KeyError:
-        print(f"Invalid die selection, defaulting to Heartsucker wordlist")
+        print(f"Invalid wordlist selection, defaulting to Heartsucker wordlist")
         return entropallib.HeartsuckerWords
 
 # PC or RPi based user interface for continuing to another word
