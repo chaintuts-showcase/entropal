@@ -101,18 +101,14 @@ class DiceEntropy:
         self._bits_last = (roll - 1)
 
     # Represent the entropy in a nice binary format
-    def _get_binary_entropy(self):
+    def entropy_binary(self):
 
         return bin(self.entropy).replace("0b", "")
 
-    entropy_binary = property(fget=_get_binary_entropy)
-
     # Represent the last added bits as binary
-    def _get_binary_roll(self):
+    def bits_last(self):
 
         return bin(self._bits_last).replace("0b", "")
-
-    bits_last = property(fget=_get_binary_roll)
 
 class DiceEntropy4(DiceEntropy):
     # 4 sides = 2 bits of entropy - log2(4)

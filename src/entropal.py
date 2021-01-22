@@ -21,9 +21,9 @@ def collect_dierolls_pc(die, bits_needed):
            
             # Collect the roll and inform the user
             die.add_roll(roll)
-            print(f"Added bits: {die.bits_last}")
+            print(f"Added bits: {die.bits_last()}")
             print(f"Total bits: {die.bits_entropy}")
-            print(f"Entropy: {die.entropy_binary}")
+            print(f"Entropy: {die.entropy_binary()}")
 
         except ValueError as e:
             print(f"Invalid roll: {e}")
