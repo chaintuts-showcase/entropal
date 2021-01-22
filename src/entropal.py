@@ -60,6 +60,13 @@ def select_wordlist_pc():
         print(f"Invalid wordlist selection, defaulting to Heartsucker wordlist")
         return entropallib.HeartsuckerWords
 
+# Option to grab entropy from OS secure random source for testing
+def pc_os_entropy():
+    raw = os.urandom(2)
+    entropy = int.from_bytes(raw, "little") # It's entropy, so assuming endianness doesn't matter
+
+    return entropy
+
 # PC or RPi based user interface for continuing to another word
 def select_cont_pc():
 
@@ -71,6 +78,12 @@ def select_cont_pc():
 
 # This is the main entry point for the program
 def main():
+
+    # For testing, you can comment out the die selection and collection calls
+    # Instead, use pc_os_entropy() and pass that to the word constructor
+    #
+    # entropy = pc_os_entropy()
+    # word = selected_wordlist(entropy)
 
     # Get the user's die selection and wordlist selection
     selected_die = select_die_pc()
