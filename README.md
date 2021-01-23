@@ -24,19 +24,22 @@ Build the application
 Clean the build directory
 
 ### Features
-* Allows inputs from 4 or 8 sided die
-* Supports the BIP39 wordlist (11 bit words, 2048 total)
-* Supports the Heartsucker wordlist (13 bit words, 8192 total)
+* Allows inputs from a 4 sided die (PC, RPi, Adafruit M4)
+* Allows inputs from an 8 sided die (PC, RPi)
+* Supports the BIP39 wordlist (11 bit words, 2048 total) (PC, RPi)
+* Supports the Heartsucker wordlist (13 bit words, 8192 total) (PC, RPi, Adafruit M4)
 * Shows the entropy collected as binary
 
 ### Requirements
-* Requires Python
+* Requires Python (PC, RPi)
+* Requires I2C character LCD and Matrix Keypad (Adafruit M4)
 
 ### Platforms
 * Windows
 * MacOSX
 * Linux
 * Raspberry Pi
+* Adafruit M4 Microprocessor
 
 ## Usage
 ____________
@@ -46,3 +49,8 @@ ____________
 * Enter your wordlist selection (defaults to Heartsucker wordlist)
 * Enter each roll as an integer number
 * Final word and entropy data will be shown once enough entropy is collected
+
+### Adafruit M4 Microcontroller Usage
+* Enter each roll via the matrix keypad, then press #
+* Final word and entropy data will be shown once enough entropy is collected
+* Press # to collect entropy for another word
