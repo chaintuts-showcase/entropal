@@ -54,3 +54,6 @@ ____________
 * Enter each roll via the matrix keypad, then press #
 * Final word and entropy data will be shown once enough entropy is collected
 * Press # to collect entropy for another word
+
+### Run unit tests
+* Run `python -m pytest <test file>`
